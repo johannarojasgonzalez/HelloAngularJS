@@ -14,9 +14,6 @@
   }
 
   module.component('afAlert', {
-    bindings: {
-      message: '=' // l'attribut message sera fourni par la variable du même nom 
-    },
     controller: AlertCtrl,
     templateUrl: './alert/alert.template.html' //chemin par rapport au fichier index (different sur angular)
 
