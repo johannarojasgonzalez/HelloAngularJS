@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app.module"> <!--module principal-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<af-alert></af-alert>
+<div ng-controller="PrenomCtrl as $ctrl">
+    <div>
+        Prénoms : <input ng-model="$ctrl.prenom">
+        <button ng-click="$ctrl.addPrenom()" ng-disabled="!$ctrl.prenom.length">+</button>
+    </div>
+    <p ng-repeat="prenom in $ctrl.prenoms track by $index">
+        Bonjour <span ng-bind="prenom"></span>!
+        <button ng-click="$ctrl.deletePrenom($index)">-</button>
+    </p>
+    <button ng-click="$ctrl.deleteLast()">Supprimer dernier</button>
+    <!--La gestion d'injection des scripts peut se gerer avec un module webpack -->
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="prenom.controller.js"></script>
+    <script src="alert/alert.component.js"></script>
+    <script src="alert/alert.service.js"></script>
+    <script src="alert/alert.module.js"></script>
+    <script src="app.module.js"></script>
+</div>
+</body>
+</html>
