@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app"> <!--module principal-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="PrenomCtrl">
+<div>
+    Prénoms : <input ng-model="prenom">
+    <button ng-click="addPrenom()">+</button>
+</div>
+<p ng-repeat="prenom in prenoms track by $index">
+    Bonjour <span ng-bind="prenom"></span>!
+    <button ng-click="deletePrenom($index)">-</button>
+</p>
+<button ng-click="deleteLast()">Supprimer dernier</button>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="prenom.controller.js"></script>
+</body>
+</html>
